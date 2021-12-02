@@ -1,0 +1,15 @@
+#!/bin/sh
+
+#This script dumps network information such as dns servers, ports and ips both on command line and into a file. Each command help with these tasks.
+
+#To run script make sure you are currently in the same "folder" as the script. By default this should not be an issue.
+
+#The textfile saves to the same place you are. Just type in cat Networkinfofile to open it.
+
+Touch "Networkinfofile$(date)"
+
+netstat google.com 2&>1 "Networkinfofile$(date)"
+
+nslookup google.com 2$>1 "Networkinfofile$(date)"
+
+dig google.com 2$>1 "Networkinfofile$(date)"
